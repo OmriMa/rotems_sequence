@@ -37,6 +37,6 @@ rotems_sequence = ((c_sharp, beat, None), (d_sharp, beat, None), (e, int(4./3*be
 
 
 if __name__ == '__main__':
-    # print rotems_sequence
+    print rotems_sequence
     for note, length, effect in rotems_sequence:
         play_note(note, length, effect)
