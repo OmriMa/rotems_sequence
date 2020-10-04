@@ -21,11 +21,11 @@ def play_note(note, length, effect=None):
     if effect is None:
         winsound.Beep(note, length)
     else:
-        intervals_num = int(length/delta)
-        intervals = [delta for i in range(intervals_num)]
-        intervals += [length - intervals_num*delta]
-        times = [i*delta for i in range(intervals_num+1)]
-        for tim, inter in zip(times, intervals):
+        plintervals_num = int(length/delta)
+        plintervals = [delta for i in range(plintervals_num)]
+        plintervals += [length - plintervals_num*delta]
+        times = [i*delta for i in range(plintervals_num+1)]
+        for tim, inter in zip(times, plintervals):
             winsound.Beep(effect(note, tim), inter)
 
 
