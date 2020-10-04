@@ -14,19 +14,19 @@ f_sharp = notes[5]
 b = notes[10]
 
 
-def play_note(note, length, effect=None):
-    '''
-    effect is a function recieving note and length
-    '''
-    if effect is None:
-        winsound.Beep(note, length)
-    else:
-        intervals_num = int(length/delta)
-        intervals = [delta for i in range(intervals_num)]
-        intervals += [length - intervals_num*delta]
-        times = [i*delta for i in range(intervals_num+1)]
-        for tim, inter in zip(times, intervals):
-            winsound.Beep(effect(note, tim), inter)
+# def play_note(note, length, effect=None):
+#     '''
+#     effect is a function recieving note and length
+#     '''
+#     if effect is None:
+#         winsound.Beep(note, length)
+#     else:
+#         intervals_num = int(length/delta)
+#         intervals = [delta for i in range(intervals_num)]
+#         intervals += [length - intervals_num*delta]
+#         times = [i*delta for i in range(intervals_num+1)]
+#         for tim, inter in zip(times, intervals):
+#             winsound.Beep(effect(note, tim), inter)
 
 
 ef = lambda n, t: int(n * (2**((1./12)*(2*((1.5)**(-t/delta))))))
